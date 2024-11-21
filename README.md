@@ -101,14 +101,18 @@ Access the API documentation at `https://virtual-arena-backend.onrender.com/swag
 
 - **Konstantine Vashalomidze** - _Initial work_ - [GitHub](https://github.com/KonstantineVashalomidze)
 
-## 🤝 Contributing
+## 🙏 Acknowledgments
 
-Contributions are welcome!
+- [Virtual Arena Frontend](https://github.com/virtual-arena-platform/virtual-arena-frontend)
+- All our contributors and supporters
+
 
 ---
 
 <p align="center">
   Made with ❤️ by <a href="https://github.com/KonstantineVashalomidze">Konstantine Vashalomidze</a>
   <br>
+  <sub>Want to contribute? Feel free to open a PR!</sub>
+    <br>
   <sub>Part of the Virtual Arena Platform</sub>
 </p>
