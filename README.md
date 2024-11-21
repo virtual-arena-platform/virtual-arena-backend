@@ -69,29 +69,25 @@ mvn spring-boot:run
 
 ### Environment Configuration
 
-Create `application.properties` file with the following configurations:
+Create `.env` file with the following configurations:
 
 ```properties
-spring.application.name=virtual-arena-backend
-spring.data.mongodb.uri=your_mongodb_uri
-spring.data.mongodb.database=your_database_name
-application.security.jwt.secret-key=your_jwt_secret
-application.security.jwt.expiration=86400000
-application.security.jwt.refresh-token.expiration=604800000
-application.security.front-url=http://localhost:3000
-
-# Mail Configuration
-spring.mail.host=smtp.gmail.com
-spring.mail.port=587
-spring.mail.username=your_email
-spring.mail.password=your_app_password
-spring.mail.properties.mail.smtp.auth=true
-spring.mail.properties.mail.smtp.starttls.enable=true
+MONGODB_URI=mongodb+srv://username:password@cluster.example.net/
+MONGODB_DATABASE=database_name
+JWT_SECRET_KEY=your_jwt_secret_key
+JWT_EXPIRATION=86400000
+JWT_REFRESH_EXPIRATION=604800000
+FRONTEND_URL=http://localhost:3000
+MAIL_USERNAME=your_email@example.com
+MAIL_PASSWORD=your_email_password
 ```
 
 ## 📚 API Documentation
 
-Access the API documentation at `http://localhost:8080/swagger-ui.html` when running locally.
+Access the API documentation at `https://virtual-arena-backend.onrender.com/swagger-ui.html` when running locally.
+
+## ⚠️ Important Note
+> **First Request Delay**: Since this application is hosted on Render's free tier, the server enters a sleep state after 15 minutes of inactivity. When you make your first request, the server needs to wake up, which can take up to 30-60 seconds. Subsequent requests will work normally.
 
 ## 🔄 Development Workflow
 
