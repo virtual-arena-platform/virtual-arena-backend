@@ -1,77 +1,33 @@
-# Virtual Arena Backend 🏛️
+# Virtual Arena Backend
 
-<p align="center">
-  <img src="https://virtualarena.tech/wp-content/uploads/2023/06/Virtual-Arena-Flaticon.png" alt="Virtual Arena Logo" width="200"/>
-  <br>
-  <em>Robust backend infrastructure for the Virtual Arena article sharing platform</em>
-</p>
+Backend service for Virtual Arena, an article-sharing platform. Built with Spring Boot, it handles authentication, article management, and the community features the frontend depends on.
 
-## 📋 Overview
+## Tech stack
 
-Backend service for Virtual Arena, built with Spring Boot 3.x, providing secure API endpoints for article management, user authentication, and community features.
+Spring Boot 3.3.5, Java 17, MongoDB, Spring Security with JWT, and SpringDoc OpenAPI for the API docs. Other dependencies include Spring Mail, io.jsonwebtoken, and Lombok.
 
-## 🛠️ Technology Stack
+## Security
 
-### Core
-- **Framework**: Spring Boot 3.3.5
-- **Language**: Java 17
-- **Database**: MongoDB
-- **Security**: Spring Security with JWT
-- **Documentation**: SpringDoc OpenAPI
+JWT-based authentication with refresh tokens, email verification on signup, role-based access control, and hashed passwords.
 
-### Key Dependencies
-- Spring Boot Starter Web
-- Spring Boot Starter Security
-- Spring Boot Starter Data MongoDB
-- Spring Boot Starter Mail
-- JWT (io.jsonwebtoken)
-- Lombok
-- SpringDoc OpenAPI UI
+## Email
 
-## 🔐 Security Features
+SMTP through Gmail handles verification emails, notifications, and password resets.
 
-- JWT-based authentication
-- Token refresh mechanism
-- Email verification system
-- Role-based access control
-- Secure password handling
+## Running locally
 
-## 📨 Email Integration
+You will need Java 17 or higher, Maven, and MongoDB.
 
-- SMTP configuration with Gmail
-- Email verification system
-- Templated notifications
-- Password reset functionality
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Java 17 or higher
-- Maven
-- MongoDB
-- IDE (IntelliJ IDEA recommended)
-
-### Installation
-
-```bash
-# Clone the repository
+```
 git clone https://github.com/virtual-arena-platform/virtual-arena-backend.git
-
-# Navigate to project directory
 cd virtual-arena-backend
-
-# Install dependencies
 mvn clean install
-
-# Run the application
 mvn spring-boot:run
 ```
 
-### Environment Configuration
+Create a .env file with:
 
-Create `.env` file with the following configurations:
-
-```properties
+```
 MONGODB_URI=mongodb+srv://username:password@cluster.example.net/
 MONGODB_DATABASE=database_name
 JWT_SECRET_KEY=your_jwt_secret_key
@@ -82,37 +38,16 @@ MAIL_USERNAME=your_email@example.com
 MAIL_PASSWORD=your_email_password
 ```
 
-## 📚 API Documentation
+## API docs
 
-Access the API documentation at `https://virtual-arena-backend.onrender.com/swagger-ui.html` when running locally.
+Swagger UI is available at /swagger-ui.html once the app is running.
 
-## ⚠️ Important Note
-> **First Request Delay**: Since this application is hosted on Render's free tier, the server enters a sleep state after 15 minutes of inactivity. When you make your first request, the server needs to wake up, which can take up to 30-60 seconds. Subsequent requests will work normally.
+## Hosting note
 
-## 🔄 Development Workflow
+This runs on Render's free tier, so it sleeps after 15 minutes without traffic. The first request after that can take 30 to 60 seconds while it wakes up; after that it responds normally.
 
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/YourFeature`
-3. Commit changes: `git commit -m 'Add YourFeature'`
-4. Push to branch: `git push origin feature/YourFeature`
-5. Submit Pull Request
+## Related
 
-## 👥 Team
+Frontend: https://github.com/virtual-arena-platform/virtual-arena-frontend
 
-- **Konstantine Vashalomidze** - _Initial work_ - [GitHub](https://github.com/KonstantineVashalomidze)
-
-## 🙏 Acknowledgments
-
-- [Virtual Arena Frontend](https://github.com/virtual-arena-platform/virtual-arena-frontend)
-- All our contributors and supporters
-
-
----
-
-<p align="center">
-  Made with ❤️ by <a href="https://github.com/KonstantineVashalomidze">Konstantine Vashalomidze</a>
-  <br>
-  <sub>Want to contribute? Feel free to open a PR!</sub>
-    <br>
-  <sub>Part of the Virtual Arena Platform</sub>
-</p>
+Author: Konstantine Vashalomidze
